@@ -1,0 +1,39 @@
+<?php
+
+  ui_include('hook');
+  ui_include('common');
+
+/**
+ * include api
+ *
+ * @param $file
+ * @param string $module
+ * @param string $dir
+ */
+function ui_include($file, $module = 'ui', $dir = 'includes') {
+  function_exists('ctools_include') && ctools_include($file, $module, $dir);
+}
+
+
+/**
+ * Implements hook_menu
+ *
+ * @return mixed
+ */
+function ui_menu() {
+  $items['test1'] = array(
+    'title' => 'test1',
+    'page callback' => 'ui_test_page',
+    'access callback' => TRUE,
+  );
+
+  return $items;
+}
+
+function ui_test_page() {
+  error_reporting(E_ALL);
+  ui_select('pc');
+  print ui_view('page', array('hello' => 'world'));
+}
+
+
