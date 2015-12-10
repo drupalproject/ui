@@ -14,5 +14,5 @@ This module want to create a simpler theme layer not so heavy.
 
 # Why
 
-I am in a old Drupal6 site many years with more than 400+ module enabled.
+I am in an old Drupal6 site many years with more than 400+ module enabled.
 So it is very slow for rendering. This is a part of code to solve this issue.
